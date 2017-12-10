@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Switch Off For A Switch</title>
+    <link href="./static/bootstrap.css" rel="stylesheet">
+    <link href="./static/default.css" rel="stylesheet">
+    <script src="./static/lib.js"></script>
+    <script src="./static/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script>
+      var GLOBALS = {
+        SERVICE_PATH: '<%- servicePath %>',
+        STRIPE_PUBLISHABLE_KEY: '<%- stripePublishableKey %>'
+      };
+      var stripe = Stripe(GLOBALS.STRIPE_PUBLISHABLE_KEY);
+      var stripeHandler = StripeCheckout.configure({
+        key: GLOBALS.STRIPE_PUBLISHABLE_KEY,
+        image: './static/images/stdlib-logo.png',
+        locale: 'auto'
+      });
+    </script>
+  </head>
+  <body class="default">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <img src="./static/images/nyc_white.png">
+        <a class="navbar-brand" href="#" style="font-size: 30px;">&nbsp;&nbsp;&nbsp;Switch Off For A Switch</a>
+        <ul class="navbar-nav ml-auto">
+          <li class="navbar-item">
+            <a class="nav-link" style="font-size: 30px; color: white;">$33,102,932.45 earned by New Yorkers this year!</a>
+          </li>
+        </ul>
+    </nav>
+    <main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <br><br>
+        <h1 style="margin: 25px 0px 20px 0px; text-align: center;">Your earnings to date</h1>
+  
+        <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
+          <div class="container">
+            <!-- Example row of columns -->
+            <div class="row"><br>
+              <div class="col-md-4"><br>
+                <h2 style="text-align: center; font-size: 20px;">Temperature</h2><br>
+                <img src="./static/images/icon3.png" height="50" class="d-block mx-auto"/><br>
+                <p>
+                  <h2 style="text-align: center; color: #e47d25; font-size:80px; font-weight: 700; margin-top: 0;">$23.04</h2>
+                  <p>Your home is 72 degrees between 7am and 4pm. Consider turning off the heat while you're at work.</p>
+                </p>
+              </div>
+              <div class="col-md-4"><br>
+                <h2 style="text-align: center; font-size: 20px;">Water</h2><br>
+                <img src="./static/images/icon2.png" height="50" class="d-block mx-auto"/><br>
+                <p>
+                  <h2 style="text-align: center; color: #0095e6; font-size:80px; font-weight: 700;">$30.93</h2>
+                  <p>You have used an average of 24.3 gallons of water per day this month. Consider taking shorter showers in order to earn more money!</p>
+                </p>
+              </div>
+              <div class="col-md-4"><br>
+                <h2 style="text-align: center; font-size: 20px;">Electricity</h2><br>
+                <img src="./static/images/icon1.png" height="50" class="d-block mx-auto"/><br>
+                <p>
+                  <h2 style="text-align: center; color: #f2d55a; font-size:80px; font-weight: 700;">$95.17</h2>
+                  <p>You have 2 smart bulbs in your home. Consider purchasing more to save more!</p>
+                </p>
+              </div>
+            </div>
+          </div> <!-- /container -->
+        </nav>
+      </div>
+      <hr>
+      <div class="container">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Switch Board</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Live Feed</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="pills-stripe-tab" data-toggle="pill" href="#pills-stripe" role="tab" aria-controls="pills-stripe" aria-selected="false">Store</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <!-- Live Feed -->
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="row-update">
+              <div class="row">
+                <div class="col-md-2">
+                  <h2>1<img src="./static/images/up-arrow.png" class="arrow" height="22px"></h2>
+                </div>
+                <div class="col-md-4">
+                  <h2>Bushwick Queens</h2>
+                  <p class="grey-font">EFd75bd50590x310f4fDab6ac0b5fbafc6015B3F22</p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-2">
+                  <h2>$23.63</h2>
+                  <p class="grey-font">0.003 ETH</p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row-update">
+              <div class="row">
+                <div class="col-md-2">
+                  <h2>2<img src="./static/images/down-arrow.png" class="arrow" height="22px"></h2>
+                </div>
+                <div class="col-md-4">
+                  <h2>Harlem Shake</h2>
+                  <p class="grey-font">0x31EFd75bc0b5fbafc6015Bd50590f4fDab6a3F22</p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-2">
+                  <h2>$31.22</h2>
+                  <p class="grey-font">0.015 ETH</p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row-update">
+              <div class="row">
+                <div class="col-md-2">
+                  <h2>3</h2>
+                </div>
+                <div class="col-md-4">
+                  <h2>Astoria Blvd Crew</h2>
+                  <p class="grey-font">0x31EFd75bc0b5fbafc6015Bd50590f4fDab6a3F22</p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-2">
+                  <h2>$91.33</h2>
+                  <p class="grey-font">0.045 ETH</p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row-update">
+              <div class="row">
+        
+                <div class="col-md-2">
+                  <h2>4<img src="./static/images/down-arrow.png" class="arrow" height="22px"></h2>
+                </div>
+                <div class="col-md-4">
+                  <h2>UES Babes</h2>
+                  <p class="grey-font">0x31EFd75bc0b5fbafc6015Bd50590f4fDab6a3F22</p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-2">
+                  <h2>$1.22</h2>
+                  <p class="grey-font">0.0025 ETH</p>
+                </div>
+              </div>
+            </div>
+        
+          </div>
+          <!-- Leaderboard -->
+          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <script>
+              var config = {
+              //apiKey: "<API_KEY>",
+              //authDomain: "<PROJECT_ID>.firebaseapp.com",
+              databaseURL: "https://city-data-d3c5e.firebaseio.com",
+              //storageBucket: "<BUCKET>.appspot.com",
+              //messagingSenderId: "<SENDER_ID>",
+              };
+              firebase.initializeApp(config);
+              function getter() {
+                firebase.database().ref('/readings/dave-sensor-2').once('value').then(function(snapshot) {
+                  //var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+                  var readingsObj = snapshot.val();
+                  var arr = Object.keys(readingsObj).map(function (key) { return readingsObj[key]; });
+                  arr = arr.slice(-10);
+                  arr.reverse();
+                  console.log(arr);
+                  var val = '';
+                  $('#myList').val('');
+                  for (var i = 0; i < arr.length; i++) {
+                    var arr2obj = arr[i];
+                    var arr2 = Object.keys(arr2obj).map(function (key) { return arr2obj[key]; });
+                    arr2 = arr2[0];
+                    val += arr2.tempC + ' C, ' + arr2.lux + ' Lux\n';   
+                  }
+                  $('#myList').val(val);
+                });
+              }
+              setInterval(getter, 10000);
+            </script>
+            <textarea id="myList" rows="7" cols="30" style="width:100%;height: 200px;font-size: 27px;"></textarea>
+            <div class="row-update">
+              <div class="row">          
+                <div class="col-md-4">
+                  <h2>8:05:03 PM</h2>
+                  <p class="grey-font">Dec 12, 2017</p>
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>70</h2>
+                  <p class="grey-font">degrees</p></center>
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>48</h2>
+                  <p class="grey-font">kWh</p></center>
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>90</h2>
+                  <p class="grey-font">gallons</p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row-update">
+              <div class="row">
+                <div class="col-md-4">
+                  <h2>8:05:03 PM</h2>
+                  <p class="grey-font">Dec 12, 2017</p>
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>70</h2>
+                  <p class="grey-font">degrees</p></center>
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>48</h2>
+                  <p class="grey-font">kWh</p></center>
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>90</h2>
+                  <p class="grey-font">gallons</p>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row-update">
+              <div class="row">
+                <div class="col-md-4">
+                  <h2>8:05:03 PM</h2>
+                  <p class="grey-font">Dec 12, 2017</p>
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>70</h2>
+                  <p class="grey-font">degrees</p></center>
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>48</h2>
+                  <p class="grey-font">kWh</p></center>
+                </div>
+                <div class="col-md-2"><center>
+                  <h2>90</h2>
+                  <p class="grey-font">gallons</p>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+          <!-- Leaderboard -->
+          <div class="tab-pane fade" id="pills-stripe" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="stripe">
+                <%- include('dialog') %>
+                <div class="storefront">
+                  <% if (error) { %>
+                    <div class="error">
+                      An error was encountered:<br><br>
+                      <%- error %>
+                    </div>
+                  <% } else if (!products.length) { %>
+                    <div class="error">
+                      It doesn't look like you have any products set up.<br><br>
+                      <a href="https://dashboard.stripe.com/test/products" target="_blank">Click here</a>
+                      to add some to your test environment.<br>
+                      If this is meant for production,
+                      <a href="https://dashboard.stripe.com/products" target="_blank">click here</a> instead.
+                    </div>
+                  <% } else { %>
+                    <% products.forEach(function(product) { %>
+                      <%- include('product', {product: product}); %>
+                    <% }); %>
+                    <% } %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br>
+    </div>
+    </main>
+    <footer class="container">
+      <p>&copy; Don't Get Croissant 2017</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>

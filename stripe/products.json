@@ -1,0 +1,64 @@
+{
+  " Efficient Air Conditioners": {
+    "description": "Earn even more with these ACs!",
+    "shippable": true,
+    "images": [
+      "./static/products/ac.png"
+    ],
+    "skus": [
+      {
+        "currency": "usd",
+        "price": 12500,
+        "image": "./static/products/ac.png",
+        "inventory": {
+          "type": "bucket",
+          "value": "limited"
+        },
+        "attributes": {
+          "Brand": "Samsung"
+        }
+      }
+    ]
+  },
+  "Smart Light Bulbs": {
+    "description": "Limited Edition",
+    "shippable": true,
+    "images": [
+      "./static/products/hue.jpg"
+    ],
+    "skus": [
+      {
+        "currency": "usd",
+        "price": 11999,
+        "inventory": {
+          "type": "bucket",
+          "value": "limited"
+        },
+        "attributes": {
+          "Brand": "Philips"
+        }
+      }
+    ]
+  },
+  "Nintendo Switch": {
+    "description": "Switch off for a Swtich!",
+    "shippable": true,
+    "images": [
+      "./static/products/ac.png"
+    ],
+    "skus": [
+      {
+        "currency": "usd",
+        "price": 29995,
+        "image": "./static/products/switch.png",
+        "inventory": {
+          "type": "bucket",
+          "value": "limited"
+        },
+        "attributes": {
+          "Drive": "32GB"
+        }
+      }
+    ]
+  }
+}

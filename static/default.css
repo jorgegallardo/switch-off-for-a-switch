@@ -1,0 +1,60 @@
+.default {
+	background-color: #F7F7F7;
+	font-family: Brown;
+	src: url('../Brown/Brown-Regular.otf');
+ }
+
+.jumbotron {
+	background-color: #F7F7F7;
+}
+/*@font-face {
+font-family: 'Brown';
+	src: url('Brown/Brown-Bold.otf');
+font-weight: 500;
+ }
+*/
+
+h2 {
+	color: #333;
+	font-weight: bold;
+}
+
+.btn {
+	text-transform: none;
+}
+
+.row-update {
+		background-color: white;
+		padding: 30px 40px;
+	}
+
+	.grey-font {
+		color: gray;
+		font-size: 15px;
+	}
+
+
+	.arrow {
+		padding-left: 20px;
+	}
+
+	.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #2196F3;
+    font-size: 20px;
+}
+
+.row-update {
+	background-color: white;
+	padding: 10px 15px;
+}
+
+.grey-font {
+	margin-bottom: 0;
+}
+
+select, select.form-control {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 10px;
+}
